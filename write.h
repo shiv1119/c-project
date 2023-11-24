@@ -1,8 +1,10 @@
+#ifndef WRITE_H
+#define Write_H
 #include<iostream>
 #include<fstream>
 #include<sstream>
 #include<vector>
-#include<string.h>
+#include<string>
 
 using namespace std;
 
@@ -12,7 +14,7 @@ void write(string Email, string Password,string MobNo,string Username,string DOB
         ofstream file;
         file.open(path,std::ios::out | std::ios::app);
         if (!file) {
-        throw runtime_error("File failed to open.");
+            throw runtime_error("File failed to open.");
         }
         string str = ""+ Email + ","+ Password + "," + MobNo + "," + Username + "," + DOB + "," + Profession;
         file << str << endl;
@@ -20,6 +22,6 @@ void write(string Email, string Password,string MobNo,string Username,string DOB
     catch (exception& e) {
         cerr << e.what() << endl;
     }
-
 }
 
+#endif

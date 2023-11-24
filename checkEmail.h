@@ -1,7 +1,10 @@
+#ifndef CHECKEMAIL_H
+#define CHECKEMAIL_H
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <string>
 
 using namespace std;
 
@@ -34,3 +37,5 @@ int checkEmail(string email){
     }
     return f;
 }
+
+#endif

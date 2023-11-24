@@ -1,18 +1,17 @@
+#ifndef GETPASSWORD_H
+#define GETPASSWORD
 #include <iostream>
 #include <fstream>
 #include <sstream>
 #include <vector>
+#include <string>
 using namespace std;
 
-vector<string> data;
-
-
-int read(){
+string getPassword(string email){
     string path = "user.csv";
+    vector<string> data;
     ifstream file;
-    string read;
-    // int f = 0;
-    
+    string read;    
     file.open(path);
     while (getline(file,read)){
         istringstream line(read);
@@ -21,15 +20,10 @@ int read(){
         {
             data.push_back(word);
         }
-        
     }
     file.close();
-    return data.size();
-}
-
-string getPassword(string email){
     int i = 6;
-    int n = read();
+    int n = data.size();
     string pass;
     while(i<=n){
         if(email == data[i]){
@@ -39,3 +33,5 @@ string getPassword(string email){
     }
     return pass;
 }
+
+#endif
