@@ -37,8 +37,4 @@ void getDataSec(const string& email){
     }
 }
 
-
-
-
-
 #endif
